@@ -7,6 +7,7 @@ def main():
     
     client_socket.connect((host, port))
     
+    print("Conectado ao servidor! 🌐")
     operation = input("Escolha a operação (+, -, *, /): ")
     num1 = input("Informe o primeiro número: ")
     num2 = input("Informe o segundo número: ")
@@ -15,9 +16,10 @@ def main():
     client_socket.send(message.encode('utf-8'))
     
     result = client_socket.recv(1024).decode('utf-8')
-    print("Resultado: ", result)
+    print(f"Resultado: {result} 📊")
     
     client_socket.close()
+    print("Conexão encerrada. 👋")
 
 if __name__ == "__main__":
     main()
